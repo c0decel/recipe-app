@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>All Recipes</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css' %}">
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <h1>All Recipes</h1>
+        </div>
+        <div class="recipe_grid">
+            {% for object in object_list %}
+            <div class="grid_item">
+                <h2>{{object.name}}</h2>
+                <h3>Difficulty: {{object.calc_difficulty}}</h3>
+                <img style="width: 200px; border-radius: 20px;" src="{% static 'recipes/'%}{{object.image}}">
+                <p>Cook time: {{object.cook_time}} minutes</p>
+                <p>Ingredients: {{object.ingredients}}</p>
+                <button>
+                    <a href="{{ object.get_absolute_url }}">Details</a>
+                </button>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
