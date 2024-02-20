@@ -3,54 +3,55 @@
     list-style: none;
 }
 
-/*For all recipes*/
-
-.recipe_grid {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
+body {
+    background-image: url('/media/static/images/background.png');
+    background-repeat: repeat;
+    background-size: 1000px 800px;
 }
 
-.grid_item {
-    padding: 10px;
-    margin: 10px;
-    border-width: 2px;
-    border-color: black;
+.banner {
+    position: relative;
+    width: 1000px; 
+    margin: 0 auto; 
+}
+
+#logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    z-index: 1;
+}
+
+#banner {
+    width: 1000px;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    border-width: 8px;
+    border-color: rgb(189, 000, 000);
+    border-style: solid;
+    border-radius: 15px;
+}
+
+button {
+    background-color: white;
+    font-size: large;
+    border-width: 6px;
+    border-color: rgb(189, 000, 000);
     border-style: solid;
     border-radius: 5px;
+    padding: 6px;
 }
 
-.recipe_thumbnail_img {
-    height: 10px;
-    border-width: 2px;
-    border-color: black;
-    border-style: solid;
-    border-radius: 5px;
-}
-/*For recipe details*/
-
-.recipe_details {
-    margin: 50px;
-    text-align: center;
+a {
+    text-decoration: none;
+    color: black;
 }
 
-.ingredients_box {
-    border-width: 2px;
-    border-color: black;
-    border-style: solid;
-    border-radius: 5px;
-    margin: auto;
-    padding: 40px;
-    width: fit-content;
-}
-
-/*For homepage*/
-
-.title_section {
-    padding: 20px;
-    text-align: center;
-}
-
-h2 {
-    font-size: 20px;
+@media (max-width: 600px) {
+    .recipe_grid {
+        grid-template-columns: 1fr;
+    }
 }

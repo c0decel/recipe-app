@@ -4,17 +4,8 @@
     <head>
         <title>All Recipes</title>
         {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css' %}">
         <style type="text/css">
-            * {
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                list-style: none;
-            }
-
-            body {
-                background-image: url('/media/static/images/background.png');
-                background-repeat: repeat;
-                background-size: 1000px 800px;
-            }
 
             .recipe_details {
                 display: flex;
@@ -48,42 +39,6 @@
                 }
             }
 
-            button {
-                background-color: white;
-                font-size: large;
-                border-width: 6px;
-                border-color: rgb(189, 000, 000);
-                border-style: solid;
-                border-radius: 5px;
-                padding: 6px;
-            }
-
-            .banner {
-                position: relative;
-                width: 1000px; 
-                margin: 0 auto; 
-            }
-
-            #logo {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 300px;
-                    z-index: 1; /* Place the top image above the bottom image */
-            }
-
-            #banner {
-                    width: 1000px;
-                    top: 0;
-                    left: 0;
-                    z-index: 0;
-                    border-width: 8px;
-                border-color: rgb(189, 000, 000);
-                border-style: solid;
-                border-radius: 15px;
-            }
-
             h1 {
                 font-size: 75px;
                 
@@ -103,8 +58,8 @@
     </head>
     <body>
         <div class="banner">
-            <img id="banner" src="/media/static/images/banner.png">
-            <img id="logo" src="/media/static/images/details.png">
+            <img id="banner" src="{% static 'recipes/images/banner.png' %}">
+            <img id="logo" src="{% static 'recipes/images/details.png' %}">
         </div>
         <div class="recipe_details">
             <h1>{{object.name}}</h1>
