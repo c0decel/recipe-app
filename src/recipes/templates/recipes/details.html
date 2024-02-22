@@ -75,9 +75,15 @@
                     <p>{{ingredient}}</p>
                 {% endfor %}
             </div>
-            <h3>Description:</h3>
+            <h2>Description:</h2>
             <div class="details_box">
                 <p>{{object.description}}</p>
+            </div>
+            <h2>Directions:</h2>
+            <div class="details_box">
+                {% for step in object.steps_to_list %}
+                <p>{{step}}</p>
+                {% endfor %}
             </div>
             <button style="margin: 20px;" onclick="goBack()">
                 Back
