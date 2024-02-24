@@ -41,6 +41,11 @@
         <div class="banner">
             <img id="banner" src="{% static 'recipes/images/banner.png' %}">
             <img id="logo" src="{% static 'recipes/images/all_recipes.png' %}">
+            {% if user.is_authenticated %}
+                <button>
+                    <a href="/success/">Log Out</a>
+                </button>
+            {% endif %}
         </div>
         <div class="recipe_grid">
             {% for object in object_list %}

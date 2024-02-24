@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
+        <title>Records</title>
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css' %}">
         <style type="text/css">
@@ -31,24 +31,16 @@
             <img id="logo" src="{% static 'recipes/images/home.png' %}">
         </div>
         <div class="title_section">
-            <h1>Welcome</h1>
-            <div style="display: flex;">
-                {% if user.is_authenticated %}
-                    <button>
-                        <a href="/success/">Log Out</a>
-                    </button>
-                {% else %}
-                    <button>
-                        <a href="/login/">Login</a>
-                    </button>
-                {% endif %}
-                <button>
-                    <a href="all_recipes">All Recipes</a>
-                </button>
-            </div>
-            <p>
-                <a href="admin">Admin</a>
-            </p>
+            <h1>Records</h1>
+            <button onclick="goBack()">
+                Back
+            </button>
         </div>
+
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
     </body>
 </html>

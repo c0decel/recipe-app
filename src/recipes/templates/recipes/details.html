@@ -60,6 +60,11 @@
         <div class="banner">
             <img id="banner" src="{% static 'recipes/images/banner.png' %}">
             <img id="logo" src="{% static 'recipes/images/details.png' %}">
+            {% if user.is_authenticated %}
+                <button>
+                    <a href="/success/">Log Out</a>
+                </button>
+            {% endif %}
         </div>
         <div class="recipe_details">
             <h1>{{object.name}}</h1>

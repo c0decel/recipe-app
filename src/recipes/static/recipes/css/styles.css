@@ -12,7 +12,7 @@ body {
 .banner {
     position: relative;
     width: 1000px; 
-    margin: 0 auto; 
+    text-align: center;
 }
 
 #logo {
