@@ -59,9 +59,14 @@
                 {{form}}<br>
                 <button type="submit">Login</button>
             </form>
-            <button onclick="goBack()">
-                Back
-            </button>
+            <div style="display: flex; flex-direction: row;">
+                <button style="margin: 10px;">
+                    <a href="/signup/">Sign Up</a>
+                </button>
+                <button onclick="goBack()" style="margin: 10px;">
+                    Back
+                </button>
+            </div>
         </div>
         <script>
             function goBack() {
