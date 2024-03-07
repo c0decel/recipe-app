@@ -126,7 +126,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 #AUTH
 LOGIN_URL = '/login/'
+SIGNUP_URL = '/signup/'
 SUCCESS_URL = '/success/'
+AUTH_USER_MODEL = 'users.User'
 
 
 # Default primary key field type

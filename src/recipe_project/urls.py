@@ -27,6 +27,7 @@ urlpatterns = [
     path('', include('recipes.urls')),
     path('all_recipes/', ViewAllRecipes.as_view(), name='all_recipes'),
     path('login/', views.login_view, name='login'),
+    path('signup/', views.signup_view, name='signup'),
     path('success/', views.logout_success, name='success'),
 ]
 
