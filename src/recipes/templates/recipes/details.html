@@ -59,10 +59,15 @@
     <body>
         <div class="banner">
             <img id="banner" src="{% static 'recipes/images/banner.png' %}">
-            <img id="logo" src="{% static 'recipes/images/details.png' %}">
+            <img id="logo" src="{% static 'recipes/images/all_recipes.png' %}">
+        </div>
+        <div class="banner_buttons">
             {% if user.is_authenticated %}
                 <button>
                     <a href="/success/">Log Out</a>
+                </button>
+                <button>
+                    <a href="/records/">Records</a>
                 </button>
             {% endif %}
         </div>

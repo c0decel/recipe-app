@@ -10,8 +10,26 @@
                 margin-top: 20px;
                 display: grid;
                 grid-gap: 10px;
-                grid-template-columns: 1fr 1fr 1fr;
             }
+
+            @media only screen and (min-width: 1001px) {
+                .recipe_grid {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+            }
+
+            @media only screen and (min-width: 401px) and (max-width: 1000px) {
+                .recipe_grid {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+
+            @media only screen and (max-width: 400px) {
+                .recipe_grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
 
             .grid_item {
                 padding: 10px;
@@ -41,11 +59,17 @@
         <div class="banner">
             <img id="banner" src="{% static 'recipes/images/banner.png' %}">
             <img id="logo" src="{% static 'recipes/images/all_recipes.png' %}">
+        </div>
+        <div class="banner_buttons">
             {% if user.is_authenticated %}
                 <button>
                     <a href="/success/">Log Out</a>
                 </button>
-            {% endif %}
+                {% endif %}
+                <button>
+                    <a href="/records/">Records</a>
+                </button>
+            
         </div>
         <div class="recipe_grid">
             {% for object in object_list %}
