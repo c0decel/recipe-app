@@ -1,13 +1,17 @@
 from django.db import models
 from django.urls import reverse
+from datetime import datetime
+from django.utils import timezone
+
 
 class Recipe(models.Model):
     name = models.CharField(max_length=50)
     cook_time = models.FloatField(help_text='in minutes')
     ingredients = models.CharField(max_length=120)
     description = models.TextField(max_length=200)
-    steps = models.TextField(max_length=1000, help_text='Seperate each step with two commas')
+    steps = models.TextField(max_length=1000, help_text='Separate each step with two commas')
     image = models.ImageField(upload_to='recipe_images', default='no_img.PNG')
+    created_at = models.DateTimeField(blank=True, null=True, default=datetime(2024, 1, 1))
 
     def calc_difficulty(self):
         ingredients = self.ingredients.split(', ')
